@@ -1,5 +1,5 @@
-export class UpdateCourseDTO {
-  readonly name?: string;
-  readonly description?: string;
-  readonly tags?: string[];
-}
+import { PartialType } from "@nestjs/mapped-types";
+import { CreateCourseDTO } from "./create-course.dto";
+
+// PartialType() é um método de mapped-types que serve para copiar os atributos de outra classe, porém tornando-os opcionais.
+export class UpdateCourseDTO extends PartialType(CreateCourseDTO) {}
